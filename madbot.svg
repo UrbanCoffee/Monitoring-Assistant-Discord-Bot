@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created using Krita: https://krita.org -->
+<!-- Current SVG Design is the UrbanCoffee.io logo turned red. -->
+
+<svg
+   width="198pt"
+   height="198pt"
+   viewBox="0 0 198 198"
+   version="1.1"
+   id="svg22"
+   sodipodi:docname="madbot.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:krita="http://krita.org/namespaces/svg/krita">
+  <sodipodi:namedview
+     id="namedview24"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="147.78532"
+     inkscape:cy="135.7645"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg22" />
+  <defs
+     id="defs14" />
+  <rect
+     style="fill:#f22121;fill-opacity:1;stroke:none;stroke-width:6.12543;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="rect359"
+     width="197.94333"
+     height="198.02934"
+     x="0.078948744"
+     y="0.26903614"
+     rx="0"
+     ry="0" />
+  <ellipse
+     id="shape0"
+     rx="86.911583"
+     ry="86.594383"
+     cx="99.778412"
+     cy="100.55359"
+     fill="#2364c6"
+     fill-rule="evenodd"
+     stroke="#2364c6"
+     stroke-width="24.5979"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     style="display:none" />
+  <path
+     id="path17"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     stroke="#ffffff"
+     stroke-width="4.0067"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     d="m 67.900383,94.84179 c -15.83093,13.13699 -22.857337,19.55535 -21.079221,19.25484 24.219526,-4.09042 43.724183,17.2435 44.557997,16.99915 1.416103,-2.23253 13.479821,-17.18532 24.427421,-23.89108 2.88464,-7.23747 7.99318,-18.784766 15.32515,-34.641902 -6.99252,-13.28138 -38.169111,-16.329896 -62.716243,1.931718 -1.847181,2.081918 -2.018932,8.864324 -0.515104,20.347274 z"
+     sodipodi:nodetypes="csccccc"
+     style="mix-blend-mode:normal" />
+  <path
+     id="shape1"
+     fill="none"
+     stroke="#ffffff"
+     stroke-width="7.28493"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     krita:marker-fill-method="auto"
+     d="M 60.236151,99.31532 C 54.261397,71.093154 53.253226,55.650793 57.21162,52.988182 c 2.036169,-1.36962 10.664433,3.352324 25.884848,14.165856"
+     sodipodi:nodetypes="csc"
+     style="mix-blend-mode:normal" />
+  <path
+     id="shape2"
+     fill="none"
+     stroke="#ffffff"
+     stroke-width="7.28493"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     d="m 128.44116,73.727087 c 7.83058,-13.048449 12.68719,-19.240635 14.56982,-18.576557 9.99203,3.524525 10.14881,65.91818 9.83465,56.27578"
+     sodipodi:nodetypes="csc"
+     style="mix-blend-mode:normal" />
+  <path
+     id="shape3"
+     fill="#ffffff"
+     fill-rule="evenodd"
+     stroke="#ffffff"
+     stroke-width="3.64246"
+     stroke-linecap="square"
+     stroke-linejoin="bevel"
+     d="m 59.787239,148.80072 c -3.105398,0.007 -11.24842,-18.981 -9.400975,-19.70336 2.949494,3.00868 22.548679,5.86557 20.154117,8.17757 -2.985702,2.88265 -9.335316,9.33186 -10.753142,11.52579 z"
+     sodipodi:nodetypes="ccsc"
+     style="mix-blend-mode:normal" />
+</svg>
