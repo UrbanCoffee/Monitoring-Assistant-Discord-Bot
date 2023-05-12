@@ -117,7 +117,7 @@ async def getLog(interaction: discord.Interaction, date: str):
 
     logfile = fileNameGenerator(date)
     ziplogfile = f'{logfile}.gz'
-    if os.path.isfile(logfile):
+    if os.path.isfile(ziplogfile):
         content = date.strftime('%d %B, %Y')
         fileName = re.search("/([^/]+)$", logfile)
         try:
