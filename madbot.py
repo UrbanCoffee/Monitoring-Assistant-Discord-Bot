@@ -80,18 +80,19 @@ async def getLog(interaction: discord.Interaction, date: str):
     
     if match.group(0) == 'yesterday':
         logfile = fileNameGenerator(datetime.date.today() - datetime.timedelta(days=1))
-        if os.path.isfile(logfile):
+        ziplogfile = f'{logfile}.gz'
+        if os.path.isfile(ziplogfile):
             content = "Yesterday's log files."
             fileName = re.search("/([^/]+)$", logfile)
             try:
-                with gzip.open(f'{logfile}.gz', 'rb') as f:
+                with gzip.open(ziplogfile, 'rb') as f:
                     file = discord.File(f, fileName.group(1))
                     await interaction.response.send_message(content=content, file=file)
                     return
             except:
-                await interaction.response.send_message(f'An error occurred when opening yesterday\'s file at the path below.```{logfile}```.')
+                await interaction.response.send_message(f'An error occurred when opening yesterday\'s file at the path below.```{ziplogfile}```.')
         else:
-            await interaction.response.send_message(f'Failed to locate yesterday\'s file at the path below.```{logfile}```')
+            await interaction.response.send_message(f'Failed to locate yesterday\'s file at the path below.```{ziplogfile}```')
         return
 
     day = match.group("day")
@@ -115,18 +116,19 @@ async def getLog(interaction: discord.Interaction, date: str):
         return
 
     logfile = fileNameGenerator(date)
+    ziplogfile = f'{logfile}.gz'
     if os.path.isfile(logfile):
         content = date.strftime('%d %B, %Y')
         fileName = re.search("/([^/]+)$", logfile)
         try:
-            with gzip.open(f'{logfile}.gz', "rb") as f:
+            with gzip.open(ziplogfile, "rb") as f:
                 file = discord.File(f, fileName.group(1))
                 await interaction.response.send_message(content=content, file=file)
                 return
         except:
-            await interaction.response.send_message(f"An error occurred when attempting to open log file corresponding to the date provided ({content}). Opened file at the path below.```{logfile}```")
+            await interaction.response.send_message(f"An error occurred when attempting to open log file corresponding to the date provided ({content}). Opened file at the path below.```{ziplogfile}```")
     else:
-        await interaction.response.send_message(f"Could not find any logs corresponding to the provided date ({date.strftime('%d %B, %Y')}). Checked at the path below.```{logfile}```")
+        await interaction.response.send_message(f"Could not find any logs corresponding to the provided date ({date.strftime('%d %B, %Y')}). Checked at the path below.```{ziplogfile}```")
 
 timezone = tz.gettz('America/Los_Angeles')
 time = datetime.time(hour=5, minute=30, tzinfo=timezone)
@@ -147,9 +149,9 @@ async def myloop():
                 await channel.send(content=date.strftime("%d %B, %Y"), file=file)
                 return
         except:
-            embedVar.description = f'Failed to open file at path below.```{logPath}```'
+            embedVar.description = f'Failed to open file at path below.```{logPath}.gz```'
     else:
-        embedVar.description = f'Failed to locate file at path below.```{logPath}```'
+        embedVar.description = f'Failed to locate file at path below.```{logPath}.gz```'
 
     embedVar.timestamp=datetime.datetime.now()
     await channel.send(embed=embedVar)
