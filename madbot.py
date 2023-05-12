@@ -29,7 +29,6 @@ dateRE = re.compile("^(?P<day>\d{1,2})/(?P<month>\d{1,2})/(?P<year>\d{4}$|'\d{2}
 def fileNameGenerator(date):
     year = date.year
     month = date.month
-    print(month)
     day = date.day
     dayNum = calendar.weekday(year, month, day)
     return f'{LOGS_PATH}/{year}/{months[month-1]}/{day}_{weekdays[dayNum]}_{LOG_FILE_NAME}'
@@ -85,7 +84,7 @@ async def getLog(interaction: discord.Interaction, date: str):
             content = "Yesterday's log files."
             fileName = re.search("/([^/]+)$", logfile)
             try:
-                with gzip.open(logfile, 'rb') as f:
+                with gzip.open(f'{logfile}.gz', 'rb') as f:
                     file = discord.File(f, fileName.group(1))
                     await interaction.response.send_message(content=content, file=file)
                     return
@@ -120,7 +119,7 @@ async def getLog(interaction: discord.Interaction, date: str):
         content = date.strftime('%d %B, %Y')
         fileName = re.search("/([^/]+)$", logfile)
         try:
-            with gzip.open(logfile, "rb") as f:
+            with gzip.open(f'{logfile}.gz', "rb") as f:
                 file = discord.File(f, fileName.group(1))
                 await interaction.response.send_message(content=content, file=file)
                 return
