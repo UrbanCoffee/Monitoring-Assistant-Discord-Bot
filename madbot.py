@@ -8,7 +8,7 @@ import platform
 import re
 from dotenv import load_dotenv
 
-from errMesg import getErrMesg, getPipeMesg
+from errMesg import getErrMesg
 
 import gzip
 
@@ -18,7 +18,6 @@ CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
 GUILD_ID = int(os.getenv('GUILD_ID'))
 LOGS_PATH = os.getenv('LOGS_PATH')
 LOG_FILE_NAME = os.getenv('LOG_FILE_NAME')
-ERR_PIPE_PATH = os.getenv('ERR_PIPE_PATH')
 ERR_FILE_PATH = os.getenv('ERR_FILE_PATH')
 AWARE_ID = os.getenv('AWARE_ID')
 
@@ -45,20 +44,6 @@ async def on_ready():
     print(f'Logged on as {client.user}')
     dailyLogLoop.start()
     errorCheckingLoop.start()
-    if(platform.system() == 'Linux'):
-        try:
-            os.mkfifo(ERR_PIPE_PATH)
-        finally:
-            print('Error Pipe Ready')
-
-@client.event
-async def close():
-    if(platform.system() == 'Linux'):
-        mesg = getPipeMesg()
-        if(mesg):
-            with open(ERR_FILE_PATH, "a") as f:
-                f.write(mesg)
-        os.remove(ERR_PIPE_PATH)
 
 # @client.event
 # async def on_message(message):
@@ -180,7 +165,7 @@ async def dailyLogLoop():
 @tasks.loop(minutes=10)
 async def errorCheckingLoop():
     mesg = getErrMesg()
-    if(not mesg):
+    if(not mesg or len(mesg) == 0):
         return
     channel = client.get_channel(CHANNEL_ID)
 
