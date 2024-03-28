@@ -5,7 +5,7 @@ import platform
 
 load_dotenv()
 ERR_PIPE_PATH = os.getenv('ERR_PIPE_PATH')
-ERR_FILE_NAME = os.getenv("ERR_FILE_NAME")
+ERR_FILE_PATH = os.getenv("ERR_FILE_PATH")
 
 def safePipeRead(fifo, nBytes):
     try:
@@ -35,7 +35,7 @@ def getPipeMesg():
 
 def getFileMesg():
     mesg = None
-    with open(ERR_FILE_NAME, 'r+') as f:
+    with open(ERR_FILE_PATH, 'r+') as f:
         mesg = f.read()
         f.truncate(0)
     return mesg
@@ -44,7 +44,6 @@ def getErrMesg():
     mesg = None
     mesg = getFileMesg()
     if(not mesg):
-        print("Nothing from file")
         mesg = getPipeMesg()
 
     return mesg

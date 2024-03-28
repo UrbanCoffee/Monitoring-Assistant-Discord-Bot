@@ -8,7 +8,7 @@ import platform
 import re
 from dotenv import load_dotenv
 
-from .errMesg import getErrMesg
+from errMesg import getErrMesg, getPipeMesg
 
 import gzip
 
@@ -54,7 +54,7 @@ async def on_ready():
 @client.event
 async def close():
     if(platform.system() == 'Linux'):
-        mesg = getErrMesg()
+        mesg = getPipeMesg()
         if(mesg):
             with open(ERR_FILE_PATH, "a") as f:
                 f.write(mesg)
